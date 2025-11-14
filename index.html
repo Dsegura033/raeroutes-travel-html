@@ -9,184 +9,215 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
-/* Global Styles */
-body {
-    margin: 0;
+  /* Base Styles */
+  body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: #fff;
-}
+    margin: 0;
+    padding: 0;
+    background: #f5f4f9; /* Soft pastel background */
+    color: #333;
+  }
 
-/* Header */
-header {
-    padding: 60px 20px;
-    text-align: center;
-}
-header img {
-    max-width: 150px;
-    margin-bottom: 20px;
-}
-header h1 {
+  h1, h2, h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: #ffd700;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
-}
-header p {
-    max-width: 650px;
-    margin: 15px auto 0;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #f0e68c;
-}
+  }
 
-/* Section Styles */
-section {
-    padding: 60px 20px;
-    max-width: 960px;
-    margin: auto;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    margin-bottom: 25px;
-    color: #ffd700;
-    text-align: center;
-}
-
-/* Cards */
-.card {
-    background: #2c3e50;
-    border-radius: 16px;
-    padding: 28px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px #ffd700;
-}
-
-/* How It Works Icons (using emojis for reliability) */
-.step-icon {
-    font-size: 1.4rem;
-    margin-right: 8px;
-}
-
-/* Collections */
-.collections {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 22px;
-    justify-content: center;
-    margin-top: 35px;
-}
-.collection-card {
-    background: #2c3e50;
-    border-radius: 16px;
-    padding: 20px;
-    width: 280px;
-    text-align: center;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-    border: 1px solid #ffd700;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  a {
     text-decoration: none;
     color: inherit;
-    position: relative;
-    cursor: pointer;
-}
-.collection-card img {
+  }
+
+  img {
     max-width: 100%;
     border-radius: 12px;
-}
-.collection-card h3 {
-    margin-top: 14px;
-    font-size: 1.25rem;
-    font-family: 'Playfair Display', serif;
-    color: #ffd700;
-}
-.collection-card p {
-    font-size: 1rem;
-    color: #f0e68c;
-}
-.collection-card:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 0 20px #ffd700;
-}
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
 
-/* Button */
-.btn {
-    display: inline-block;
-    padding: 16px 26px;
-    background: linear-gradient(45deg, #ff6a00, #ffcc00);
-    color:#1e1e1e;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 1.15rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-}
-.btn:hover {
-    transform: scale(1.08);
-}
+  /* Fade-in animation */
+  .fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
 
-/* Contact Section */
-#contact {
-    background: #1e3c72;
+  .animate {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.8s ease-out;
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #c7d2fe, #e0c3fc);
+    padding: 50px 20px;
     text-align: center;
-    padding: 70px 20px;
-}
-#contact a {
-    color: #ffd700;
-    text-decoration: none;
-}
-#contact a:hover {
-    text-decoration: underline;
-}
+  }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 25px;
-    font-size: .95rem;
-    color: #f0e68c;
-    background: #2a5298;
-}
+  header h1 {
+    font-size: 2.5rem;
+    color: #4b4b7f;
+  }
 
-/* Lightbox overlay */
-.lightbox-overlay {
-    position: fixed;
-    top:0; left:0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-.lightbox-overlay img {
-    max-width: 90%;
-    max-height: 90%;
+  header p {
+    font-size: 1.2rem;
+    color: #6b6b8a;
+    margin-top: 10px;
+  }
+
+  /* Collections Section */
+  .collections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .collection-card {
+    background: #fff;
     border-radius: 12px;
-    box-shadow: 0 0 20px #ffd700;
-}
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
 
-/* Responsive */
-@media (max-width: 600px) {
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.9rem; }
-    .collection-card { width: 100%; }
-}
+  .collection-card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+  }
+
+  .collection-card h3 {
+    margin: 15px 0 5px;
+    color: #4b4b7f;
+  }
+
+  .collection-card p {
+    color: #6b6b8a;
+    font-size: 0.95rem;
+  }
+
+  /* Voucher Section */
+  .voucher-section {
+    background: #ede6fa;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .voucher-section h2 {
+    color: #4b4b7f;
+    margin-bottom: 20px;
+  }
+
+  .voucher-section p {
+    color: #6b6b8a;
+    margin-bottom: 30px;
+  }
+
+  .voucher-image {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 2px dashed #a19ff5;
+    padding: 15px;
+    border-radius: 12px;
+    background: #fff;
+    transition: transform 0.3s ease;
+  }
+
+  .voucher-image:hover {
+    transform: scale(1.05);
+  }
+
+  /* Contact Section */
+  .contact-section {
+    padding: 50px 20px;
+    background: #fff;
+    text-align: center;
+  }
+
+  .contact-section h2 {
+    color: #4b4b7f;
+    margin-bottom: 20px;
+  }
+
+  .contact-section form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-section input,
+  .contact-section textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contact-section input:focus,
+  .contact-section textarea:focus {
+    border-color: #9b8dfc;
+    box-shadow: 0 0 8px rgba(155,141,252,0.3);
+    outline: none;
+  }
+
+  .contact-section button {
+    padding: 12px;
+    background: #9b8dfc;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .contact-section button:hover {
+    background: #7f70f2;
+    transform: translateY(-2px);
+  }
+
+  .contact-section p {
+    margin-top: 15px;
+    color: #6b6b8a;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #c7d2fe;
+    color: #4b4b7f;
+  }
+
+  /* Responsive Text */
+  @media (max-width: 600px) {
+    header h1 { font-size: 2rem; }
+    header p { font-size: 1rem; }
+  }
 </style>
+
+<script>
+  // Scroll/fade-in animation
+  const animateElements = document.querySelectorAll('.animate, img');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('fade-in');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  animateElements.forEach(el => observer.observe(el));
+</script>
+
 </head>
 
-<body>
+</body>
 
 <!-- HEADER -->
 <header>
@@ -260,14 +291,6 @@ footer {
     <div class="card">
         <!-- Placeholder collage image -->
         <img src="tripreveal.png" alt="Trip Reveal Preview" style="width:100%; border-radius:12px; margin-bottom:20px; box-shadow:0 4px 15px rgba(255,215,0,0.4);">
-
-        <!-- Trip details -->
-        <p style="font-size:1.05rem; line-height:1.6; color:#f0e68c;">
-            <strong>Destination:</strong> Tropical Beach Resort<br>
-            <strong>Hotel:</strong> Oceanview Paradise<br>
-            <strong>Included Experiences:</strong> Snorkeling tour, sunset cruise, spa day<br>
-            <strong>Travel Dates:</strong> December 20 - December 27, 2025
-        </p>
 
         <p style="margin-top:15px; color:#ffd700; font-style:italic;">
             This is an example of the beautiful trip reveal your recipient will see once their holiday getaway is booked!
