@@ -14,7 +14,7 @@
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f5f4f9; /* Soft pastel background */
+    background: #f5f4f9;
     color: #333;
   }
 
@@ -199,8 +199,144 @@
     header h1 { font-size: 2rem; }
     header p { font-size: 1rem; }
   }
+
+  /* Lightbox */
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+  }
 </style>
 
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="animate">
+    <img src="IMG_7560.jpg" alt="RaeRoutes Logo" />
+    <h1>RaeRoutes Holiday Travel Gift Experience</h1>
+    <p>The most meaningful gift isn’t a thing, it’s the trip you’ll remember forever.  
+       Give the gift of going this holiday season!</p>
+</header>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="animate">
+    <h2>How It Works</h2>
+
+    <div class="card animate">
+        <h3>🎁 1. The Gifter Fills Out the Gift Request</h3>
+        <p>You decide the budget, trip style, and what to include. Fill out the holiday gift request form so RaeRoutes can prepare custom options.</p>
+        <a class="btn" href="https://form.jotform.com/252610303961045" target="_blank">Fill Out Gift Form</a>
+    </div>
+
+    <div class="card animate">
+        <h3>✅ 2. You Approve the Trip Plan & Pay</h3>
+        <p>Room options, package pricing, flights, and add-ons are broken down for you. Everything is booked under the receiver’s name using the gifter’s card.</p>
+    </div>
+
+    <div class="card animate">
+        <h3>✈️ 3. The Receiver Gets a Beautiful Trip Reveal</h3>
+        <p>The receiver will see a customized trip reveal page with all details of their getaway: destination, hotel, dates, and add-ons included.</p>
+    </div>
+</section>
+
+<!-- COLLECTIONS SECTION -->
+<section id="collections" class="animate">
+    <h2>RaeRoutes Travel Collections</h2>
+    <div class="collections">
+        <div class="collection-card animate">
+            <img src="citycollection.png" alt="City Collection" data-full="citycollection.png">
+            <h3>City Collection</h3>
+            <p>Discover the best city getaways in the U.S.</p>
+        </div>
+        <div class="collection-card animate">
+            <img src="Thecoastalcollection.png" alt="Coastal Collection" data-full="Thecoastalcollection.png">
+            <h3>Coastal Collection</h3>
+            <p>Relax by the ocean and enjoy coastal vibes.</p>
+        </div>
+        <div class="collection-card animate">
+            <img src="romanticescapescollection.png" alt="Romantic Collection" data-full="romanticescapescollection.png">
+            <h3>Romantic Collection</h3>
+            <p>Perfect escapes for couples and romantic adventures.</p>
+        </div>
+        <div class="collection-card animate">
+            <img src="familyfuncollection.png" alt="Family Fun Collection" data-full="familyfuncollection.png">
+            <h3>Family Fun Collection</h3>
+            <p>Memorable trips for the whole family.</p>
+        </div>
+        <div class="collection-card animate">
+            <img src="adventurecollection.png" alt="the adventure collection" data-full="adventurecollection.png">
+            <h3>Adventure Collection</h3>
+            <p>Made for the ones who chase fresh air, big views, and a little adrenaline.</p>
+        </div>
+        <div class="collection-card animate">
+            <img src="winterwonderland.png" alt="winter wonderland collection" data-full="winterwonderland.png">
+            <h3>Winter Wonderland Collection</h3>
+            <p>Made for the ones who love the holiday season magic, with destinations perfect for winter adventures.</p>
+        </div>
+    </div>
+</section>
+    
+<!-- TRIP REVEAL SAMPLE -->
+<section id="trip-reveal" class="animate">
+    <h2>Trip Reveal Sample</h2>
+    <div class="card animate">
+        <img src="tripreveal.png" alt="Trip Reveal Preview" style="width:100%; border-radius:12px; margin-bottom:20px; box-shadow:0 4px 15px rgba(255,215,0,0.4);">
+        <p style="margin-top:15px; color:#ffd700; font-style:italic;">
+            This is an example of the beautiful trip reveal your recipient will see once their holiday getaway is booked!
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section animate">
+    <h2>Contact RaeRoutes</h2>
+    <p style="max-width: 500px; margin: 0 auto 30px;">
+        Have a trip idea in mind or gifting questions?  
+        I’d love to help you create the perfect holiday travel surprise.
+    </p>
+
+    <div style="margin-bottom: 20px; text-align: center;">
+        <strong>Find us on Facebook:</strong><br>
+        <img src="qr-code.png" alt="Scan to visit RaeRoutes on Facebook" style="width:150px; margin-top:10px;">
+        <p style="font-size: 0.9em; margin-top: 5px;">Scan to visit our page</p>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <strong>Message us on Messenger:</strong><br>
+        <a href="https://m.me/RaeRoutes" target="_blank" rel="noopener noreferrer">Send a message</a>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <strong>Email:</strong><br>
+        <a href="mailto:raeroutes13@gmail.com">raeroutes13@gmail.com</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="animate">
+    © RaeRoutes Travel — Holiday 2025
+</footer>
+
+<!-- LIGHTBOX OVERLAY -->
+<div class="lightbox-overlay" id="lightbox">
+    <img src="" alt="Full Image" id="lightbox-img">
+</div>
+
+<!-- SCRIPTS -->
 <script>
   // Scroll/fade-in animation
   const animateElements = document.querySelectorAll('.animate, img');
@@ -213,154 +349,22 @@
   }, { threshold: 0.2 });
 
   animateElements.forEach(el => observer.observe(el));
-</script>
 
-</head>
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const cardImages = document.querySelectorAll('.collection-card img');
 
-</body>
+  cardImages.forEach(img => {
+      img.addEventListener('click', () => {
+          lightbox.style.display = 'flex';
+          lightboxImg.src = img.dataset.full;
+      });
+  });
 
-<!-- HEADER -->
-<header>
-    <img src="IMG_7560.jpg" alt="RaeRoutes Logo" />
-    <h1>RaeRoutes Holiday Travel Gift Experience</h1>
-    <p>The most meaningful gift isn’t a thing, it’s the trip you’ll remember forever.  
-       Give the gift of going this holiday season!</p>
-</header>
-
-<!-- HOW IT WORKS -->
-<section id="how-it-works">
-    <h2>How It Works</h2>
-
-    <div class="card">
-        <h3>🎁 1. The Gifter Fills Out the Gift Request</h3>
-        <p>You decide the budget, trip style, and what to include. Fill out the holiday gift request form so RaeRoutes can prepare custom options.</p>
-        <a class="btn" href="https://form.jotform.com/252610303961045" target="_blank">Fill Out Gift Form</a>
-    </div>
-
-    <div class="card">
-        <h3>✅ 2. You Approve the Trip Plan & Pay</h3>
-        <p>Room options, package pricing, flights, and add-ons are broken down for you. Everything is booked under the receiver’s name using the gifter’s card.</p>
-    </div>
-
-    <div class="card">
-        <h3>✈️ 3. The Receiver Gets a Beautiful Trip Reveal</h3>
-        <p>The receiver will see a customized trip reveal page with all details of their getaway: destination, hotel, dates, and add-ons included.</p>
-    </div>
-</section>
-
-<!-- COLLECTIONS SECTION -->
-<section id="collections">
-    <h2>RaeRoutes Travel Collections</h2>
-    <div class="collections">
-        <div class="collection-card">
-            <img src="citycollection.png" alt="City Collection" data-full="citycollection.png">
-            <h3>City Collection</h3>
-            <p>Discover the best city getaways in the U.S.</p>
-        </div>
-        <div class="collection-card">
-            <img src="Thecoastalcollection.png" alt="Coastal Collection" data-full="Thecoastalcollection.png">
-            <h3>Coastal Collection</h3>
-            <p>Relax by the ocean and enjoy coastal vibes.</p>
-        </div>
-        <div class="collection-card">
-            <img src="romanticescapescollection.png" alt="Romantic Collection" data-full="romanticescapescollection.png">
-            <h3>Romantic Collection</h3>
-            <p>Perfect escapes for couples and romantic adventures.</p>
-        </div>
-        <div class="collection-card">
-            <img src="familyfuncollection.png" alt="Family Fun Collection" data-full="familyfuncollection.png">
-            <h3>Family Fun Collection</h3>
-            <p>Memorable trips for the whole family.</p>
-        </div>
-        <div class="collection-card">
-            <img src="adventurecollection.png" alt="the adventure collection" data-full="adventurecollection.png">
-            <h3>Adventure Collection</h3>
-            <p>Made for the ones who chase fresh air, big views, and a little adrenaline.</p>
-        </div>
-         <div class="collection-card">
-            <img src="winterwonderland.png" alt="winter wonderland collection" data-full="winterwonderland.png">
-            <h3>Winter Wondrland Collection</h3>
-            <p>Made for the ones who love the holday season magic, with destiantions perfect for winter adventures.</p>
-        </div>
-    </div>
-</section>
-    
-<!-- TRIP REVEAL SAMPLE (UPDATED) -->
-<section id="trip-reveal">
-    <h2>Trip Reveal Sample</h2>
-    <div class="card">
-        <!-- Placeholder collage image -->
-        <img src="tripreveal.png" alt="Trip Reveal Preview" style="width:100%; border-radius:12px; margin-bottom:20px; box-shadow:0 4px 15px rgba(255,215,0,0.4);">
-
-        <p style="margin-top:15px; color:#ffd700; font-style:italic;">
-            This is an example of the beautiful trip reveal your recipient will see once their holiday getaway is booked!
-        </p>
-    </div>
-</section>
-
-    </div>
-</section>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-    <h2>Contact RaeRoutes</h2>
-    <p style="max-width: 500px; margin: 0 auto 30px;">
-        Have a trip idea in mind or gifting questions?  
-        I’d love to help you create the perfect holiday travel surprise.
-    </p>
-
-    <!-- QR Code for Facebook -->
-    <div style="margin-bottom: 20px; text-align: center;">
-        <strong>Find us on Facebook:</strong><br>
-        <img src="qr-code.png" 
-             alt="Scan to visit RaeRoutes on Facebook" 
-             style="width:150px; margin-top:10px;">
-        <p style="font-size: 0.9em; margin-top: 5px;">Scan to visit our page</p>
-    </div>
-
-    <!-- Messenger Link -->
-    <div style="margin-bottom: 20px;">
-        <strong>Message us on Messenger:</strong><br>
-        <a href="https://m.me/RaeRoutes" target="_blank" rel="noopener noreferrer">
-            Send a message
-        </a>
-    </div>
-
-    <!-- Email Link -->
-    <div style="margin-bottom: 20px;">
-        <strong>Email:</strong><br>
-        <a href="mailto:raeroutes13@gmail.com">raeroutes13@gmail.com</a>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    © RaeRoutes Travel — Holiday 2025
-</footer>
-
-<!-- LIGHTBOX OVERLAY -->
-<div class="lightbox-overlay" id="lightbox">
-    <img src="" alt="Full Image" id="lightbox-img">
-</div>
-
-<!-- LIGHTBOX SCRIPT -->
-<script>
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const cardImages = document.querySelectorAll('.collection-card img');
-
-cardImages.forEach(img => {
-    img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.dataset.full; // load full-size image
-    });
-});
-
-lightbox.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
+  lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+  });
 </script>
 
 </body>
