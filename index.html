@@ -13,13 +13,12 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(to bottom right, #f2f0eb, #e0d9c8);
-    color: #333;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
 }
 
 /* Header */
 header {
-    background: linear-gradient(to bottom right, #f5e9dd, #fff8f2);
     padding: 60px 20px;
     text-align: center;
 }
@@ -29,17 +28,16 @@ header img {
 }
 header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    letter-spacing: 0.5px;
-    color: #c2935d;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    font-size: 3rem;
+    color: #ffd700;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
 }
 header p {
     max-width: 650px;
     margin: 15px auto 0;
-    color: #555;
     font-size: 1.2rem;
     line-height: 1.6;
+    color: #f0e68c;
 }
 
 /* Section Styles */
@@ -47,39 +45,34 @@ section {
     padding: 60px 20px;
     max-width: 960px;
     margin: auto;
-    border-bottom: 1px solid #e8e1d6;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 25px;
-    color: #444;
+    color: #ffd700;
     text-align: center;
-}
-p {
-    line-height: 1.6;
 }
 
 /* Cards */
 .card {
-    background: white;
+    background: #2c3e50;
     border-radius: 16px;
     padding: 28px;
     margin-bottom: 25px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px #ffd700;
 }
 
-/* How It Works Icons */
+/* How It Works Icons (using emojis for reliability) */
 .step-icon {
-    width: 30px;
-    vertical-align: middle;
-    margin-right: 10px;
-    fill: #c2935d;
+    font-size: 1.4rem;
+    margin-right: 8px;
 }
 
 /* Collections */
@@ -91,13 +84,13 @@ p {
     margin-top: 35px;
 }
 .collection-card {
-    background: white;
+    background: #2c3e50;
     border-radius: 16px;
     padding: 20px;
     width: 280px;
     text-align: center;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    border: 1px solid #e3dac9;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    border: 1px solid #ffd700;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
@@ -112,55 +105,47 @@ p {
     margin-top: 14px;
     font-size: 1.25rem;
     font-family: 'Playfair Display', serif;
+    color: #ffd700;
 }
 .collection-card p {
     font-size: 1rem;
-    color: #555;
-}
-.collection-card:hover::after {
-    opacity: 1;
-}
-.collection-card::after {
-    content: "";
-    position: absolute;
-    top:0; left:0; width:100%; height:100%;
-    background: rgba(203, 147, 92, 0.2); /* subtle gold overlay */
-    opacity:0;
-    transition: opacity 0.3s ease;
+    color: #f0e68c;
 }
 .collection-card:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 0 20px #ffd700;
 }
 
 /* Button */
 .btn {
     display: inline-block;
     padding: 16px 26px;
-    background: linear-gradient(45deg, #c2935d, #e0c79a);
-    color:white;
+    background: linear-gradient(45deg, #ff6a00, #ffcc00);
+    color:#1e1e1e;
     text-decoration: none;
     border-radius: 10px;
     font-size: 1.15rem;
-    font-weight: 600;
+    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
 }
 .btn:hover {
-    background: linear-gradient(45deg, #e0c79a, #c2935d);
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 /* Contact Section */
 #contact {
-    background: #fdf8f4;
+    background: #1e3c72;
     text-align: center;
     padding: 70px 20px;
 }
+#contact a {
+    color: #ffd700;
+    text-decoration: none;
+}
 #contact a:hover {
     text-decoration: underline;
-    color: #c2935d;
 }
 
 /* Footer */
@@ -168,14 +153,14 @@ footer {
     text-align: center;
     padding: 25px;
     font-size: .95rem;
-    color: #777;
-    background: #f8f8f6;
+    color: #f0e68c;
+    background: #2a5298;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.7rem; }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.9rem; }
     .collection-card { width: 100%; }
 }
 </style>
@@ -196,36 +181,18 @@ footer {
     <h2>How It Works</h2>
 
     <div class="card">
-        <h3>
-            <!-- Gift Icon -->
-            <svg class="step-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M20 12v10H4V12H20m0-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V12a2 2 0 0 0-2-2M12 4a2.5 2.5 0 0 0-2.5 2.5c0 .69.28 1.31.73 1.76l1.77 1.77 1.77-1.77c.45-.45.73-1.07.73-1.76A2.5 2.5 0 0 0 12 4Z"/>
-            </svg>
-            1. The Gifter Fills Out the Gift Request
-        </h3>
+        <h3>🎁 1. The Gifter Fills Out the Gift Request</h3>
         <p>You decide the budget, trip style, and what to include. Fill out the holiday gift request form so RaeRoutes can prepare custom options.</p>
         <a class="btn" href="https://form.jotform.com/252610303961045" target="_blank">Fill Out Gift Form</a>
     </div>
 
     <div class="card">
-        <h3>
-            <!-- Approval Icon -->
-            <svg class="step-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M9 21H7V11h2v10m8-6h-2V5h-2v10h2v-4h2v4z"/>
-            </svg>
-            2. You Approve the Trip Plan & Pay
-        </h3>
+        <h3>✅ 2. You Approve the Trip Plan & Pay</h3>
         <p>Room options, package pricing, flights, and add-ons are broken down for you. Everything is booked under the receiver’s name using the gifter’s card.</p>
     </div>
 
     <div class="card">
-        <h3>
-            <!-- Plane Icon -->
-            <svg class="step-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M2.5 19l19-7-19-7v5l13 2-13 2v5z"/>
-            </svg>
-            3. The Receiver Gets a Beautiful Trip Reveal
-        </h3>
+        <h3>✈️ 3. The Receiver Gets a Beautiful Trip Reveal</h3>
         <p>The receiver will see a customized trip reveal page with all details of their getaway: destination, hotel, dates, and add-ons included.</p>
     </div>
 </section>
