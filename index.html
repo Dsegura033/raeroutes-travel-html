@@ -96,6 +96,7 @@ h2 {
     text-decoration: none;
     color: inherit;
     position: relative;
+    cursor: pointer;
 }
 .collection-card img {
     max-width: 100%;
@@ -157,6 +158,25 @@ footer {
     background: #2a5298;
 }
 
+/* Lightbox overlay */
+.lightbox-overlay {
+    position: fixed;
+    top:0; left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #ffd700;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     h1 { font-size: 2.2rem; }
@@ -170,7 +190,7 @@ footer {
 
 <!-- HEADER -->
 <header>
-    <img src="#" alt="RaeRoutes Logo" />
+    <img src="IMG_7560.jpg" alt="RaeRoutes Logo" />
     <h1>RaeRoutes Holiday Travel Gift Experience</h1>
     <p>The most meaningful gift isn’t a thing — it’s the trip you’ll remember forever.  
        Give the gift of going this holiday season!</p>
@@ -201,31 +221,36 @@ footer {
 <section id="collections">
     <h2>RaeRoutes Travel Collections</h2>
     <div class="collections">
-        <a href="#" class="collection-card">
-            <img src="(insert your image)" alt="City Collection">
+        <div class="collection-card">
+            <img src="citycollection.png" alt="City Collection" data-full="city-full.jpg">
             <h3>City Collection</h3>
             <p>Discover the best city getaways in the U.S.</p>
-        </a>
-        <a href="#" class="collection-card">
-            <img src="(insert your image)" alt="Coastal Collection">
+        </div>
+        <div class="collection-card">
+            <img src="Thecoastalcollection.png" alt="Coastal Collection" data-full="coastal-full.jpg">
             <h3>Coastal Collection</h3>
             <p>Relax by the ocean and enjoy coastal vibes.</p>
-        </a>
-        <a href="#" class="collection-card">
-            <img src="(insert your image)" alt="Romantic Collection">
+        </div>
+        <div class="collection-card">
+            <img src="romanticescapescollection.png" alt="Romantic Collection" data-full="romantic-full.jpg">
             <h3>Romantic Collection</h3>
             <p>Perfect escapes for couples and romantic adventures.</p>
-        </a>
-        <a href="#" class="collection-card">
-            <img src="(insert your image)" alt="Family Fun Collection">
+        </div>
+        <div class="collection-card">
+            <img src="familyfuncollection.png" alt="Family Fun Collection" data-full="family-full.jpg">
             <h3>Family Fun Collection</h3>
             <p>Memorable trips for the whole family.</p>
-        </a>
-        <a href="#" class="collection-card">
-            <img src="(insert your image)" alt="Chill & Recharge Collection">
-            <h3>Chill & Recharge Collection</h3>
-            <p>Relaxing trips to unwind and recharge your mind and body.</p>
-        </a>
+        </div>
+        <div class="collection-card">
+            <img src="adventurecollection.png" alt="the adventure collection" data-full="chill-full.jpg">
+            <h3>Adventure Collection</h3>
+            <p>Made for the ones who chase fresh air, big views, and a little adrenaline.</p>
+        </div>
+         <div class="collection-card">
+            <img src="winterwonderland.png" alt="winter wonderland collection" data-full="chill-full.jpg">
+            <h3>Winter Wondrland Collection</h3>
+            <p>Made for the ones who love the holday season magic, with destiantions perfect for winter adventures.</p>
+        </div>
     </div>
 </section>
 
@@ -273,6 +298,29 @@ footer {
 <footer>
     © RaeRoutes Travel — Holiday 2025
 </footer>
+
+<!-- LIGHTBOX OVERLAY -->
+<div class="lightbox-overlay" id="lightbox">
+    <img src="" alt="Full Image" id="lightbox-img">
+</div>
+
+<!-- LIGHTBOX SCRIPT -->
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const cardImages = document.querySelectorAll('.collection-card img');
+
+cardImages.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.dataset.full; // load full-size image
+    });
+});
+
+lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+</script>
 
 </body>
 </html>
