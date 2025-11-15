@@ -42,7 +42,7 @@
   }
 
   header img {
-    max-width: 160px;
+    max-width: 140px; /* smaller, balanced logo */
     height: auto;
     margin-bottom: 20px;
   }
@@ -71,6 +71,15 @@
     padding: 50px 20px;
     text-align: center;
   }
+  #how-it-works .card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#how-it-works .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(155,141,252,0.3);
+}
+
 
   #how-it-works .card {
     background: #fff;
@@ -139,12 +148,13 @@
   }
 
   /* Image hover glow */
-  .collection-card img,
   #trip-reveal .card img {
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
+    max-width: 90%; /* smaller, fits nicely */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+  
   .collection-card img:hover,
   #trip-reveal .card img:hover {
     transform: translateY(-5px);
