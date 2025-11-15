@@ -9,16 +9,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
+  /* Base Styles */
   body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f5f4f9;
+    background: #f9f8fc; /* soft pastel lavender/white */
     color: #333;
   }
 
   h1, h2, h3 {
     font-family: 'Playfair Display', serif;
+    color: #4b4b7f;
   }
 
   a {
@@ -35,26 +37,25 @@
 
   /* Header */
   header {
-    background: linear-gradient(135deg, #c7d2fe, #e0c3fc);
-    padding: 50px 20px;
+    background: linear-gradient(135deg, #d6c3f5, #f0e4fc);
+    padding: 40px 20px;
     text-align: center;
   }
 
   header img {
-    max-width: 200px;
+    max-width: 180px;
     height: auto;
     margin-bottom: 20px;
   }
 
   header h1 {
     font-size: 2.2rem;
-    color: #4b4b7f;
+    margin-bottom: 10px;
   }
 
   header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #6b6b8a;
-    margin-top: 10px;
   }
 
   /* How It Works */
@@ -64,7 +65,7 @@
   }
 
   #how-it-works h2 {
-    color: #4b4b7f;
+    font-size: 2rem;
     margin-bottom: 40px;
   }
 
@@ -80,19 +81,19 @@
 
   #how-it-works .card h3 {
     margin-bottom: 10px;
-    color: #4b4b7f;
   }
 
   #how-it-works .card p {
     color: #6b6b8a;
     font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   #how-it-works .btn {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background: #9b8dfc;
+    background: #b49dfc;
     color: #fff;
     border-radius: 8px;
     font-weight: 600;
@@ -100,7 +101,7 @@
   }
 
   #how-it-works .btn:hover {
-    background: #7f70f2;
+    background: #9069f2;
   }
 
   /* Collections Section */
@@ -127,7 +128,6 @@
 
   .collection-card h3 {
     margin: 15px 0 5px;
-    color: #4b4b7f;
   }
 
   .collection-card p {
@@ -140,12 +140,12 @@
     max-width: 400px;
     margin: 0 auto 20px;
     display: block;
-    box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+    box-shadow: 0 4px 15px rgba(155,141,252,0.3);
   }
 
   #trip-reveal .card p {
     margin-top: 15px;
-    color: #ffd700;
+    color: #9069f2;
     font-style: italic;
     text-align: center;
   }
@@ -158,19 +158,25 @@
   }
 
   .contact-section h2 {
-    color: #4b4b7f;
     margin-bottom: 20px;
   }
 
   .contact-section p {
-    margin-top: 15px;
+    max-width: 500px;
+    margin: 0 auto 30px;
     color: #6b6b8a;
   }
 
+  .contact-section a {
+    color: #9069f2;
+    font-weight: 600;
+  }
+
+  /* Footer */
   footer {
     text-align: center;
     padding: 20px;
-    background: #c7d2fe;
+    background: #d6c3f5;
     color: #4b4b7f;
   }
 
@@ -197,19 +203,22 @@
   @media (max-width: 600px) {
     header h1 { font-size: 2rem; }
     header p { font-size: 1rem; }
-    #how-it-works .card { max-width: 100%; }
     #trip-reveal .card img { max-width: 90%; }
   }
 </style>
+
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
-    <img src="IMG_7560.jpg" alt="RaeRoutes Logo">
+    <img src="IMG_7560.jpg" alt="RaeRoutes Logo" />
     <h1>RaeRoutes Holiday Travel Gift Experience</h1>
-    <p>The most meaningful gift isn’t a thing, it’s the trip you’ll remember forever. Give the gift of going this holiday season!</p>
+    <p>The most meaningful gift isn’t a thing, it’s the trip you’ll remember forever.  
+       Give the gift of going this holiday season!</p>
 </header>
 
+<!-- HOW IT WORKS -->
 <section id="how-it-works">
     <h2>How It Works</h2>
 
@@ -230,6 +239,7 @@
     </div>
 </section>
 
+<!-- COLLECTIONS SECTION -->
 <section id="collections">
     <h2>RaeRoutes Travel Collections</h2>
     <div class="collections">
@@ -254,18 +264,19 @@
             <p>Memorable trips for the whole family.</p>
         </div>
         <div class="collection-card">
-            <img src="adventurecollection.png" alt="Adventure Collection" data-full="adventurecollection.png">
+            <img src="adventurecollection.png" alt="the adventure collection" data-full="adventurecollection.png">
             <h3>Adventure Collection</h3>
             <p>Made for the ones who chase fresh air, big views, and a little adrenaline.</p>
         </div>
-        <div class="collection-card">
-            <img src="winterwonderland.png" alt="Winter Wonderland Collection" data-full="winterwonderland.png">
+         <div class="collection-card">
+            <img src="winterwonderland.png" alt="winter wonderland collection" data-full="winterwonderland.png">
             <h3>Winter Wonderland Collection</h3>
             <p>Made for the ones who love the holiday season magic, with destinations perfect for winter adventures.</p>
         </div>
     </div>
 </section>
 
+<!-- TRIP REVEAL SAMPLE -->
 <section id="trip-reveal">
     <h2>Trip Reveal Sample</h2>
     <div class="card">
@@ -274,6 +285,7 @@
     </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="contact-section">
     <h2>Contact RaeRoutes</h2>
     <p>Have a trip idea in mind or gifting questions? I’d love to help you create the perfect holiday travel surprise.</p>
@@ -299,25 +311,26 @@
     © RaeRoutes Travel — Holiday 2025
 </footer>
 
+<!-- LIGHTBOX -->
 <div class="lightbox-overlay" id="lightbox">
     <img src="" alt="Full Image" id="lightbox-img">
 </div>
 
 <script>
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const cardImages = document.querySelectorAll('.collection-card img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const cardImages = document.querySelectorAll('.collection-card img');
 
-  cardImages.forEach(img => {
-      img.addEventListener('click', () => {
-          lightbox.style.display = 'flex';
-          lightboxImg.src = img.dataset.full || img.src;
-      });
-  });
+cardImages.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.dataset.full;
+    });
+});
 
-  lightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-  });
+lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
 </script>
 
 </body>
