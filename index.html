@@ -9,12 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
-/* Base Styles */
+/* ---------------- Base & Typography ---------------- */
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f5f4f9; /* Soft pastel background */
+  background: #f5f4f9;
   color: #333;
 }
 
@@ -24,22 +24,10 @@ h1, h2, h3 {
 }
 
 h2 {
-  text-align: center; /* center section headers */
+  text-align: center;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  max-width: 100%;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* HEADER */
+/* ---------------- Header ---------------- */
 .hero-header {
   text-align: center;
   padding: 60px 20px;
@@ -57,10 +45,11 @@ img {
 }
 
 .hero-header h1 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 700;
   margin: 10px 0;
   color: #3a2a70;
+  text-shadow: 0 2px 8px rgba(58,42,112,0.25);
 }
 
 .hero-subtitle {
@@ -70,7 +59,7 @@ img {
   opacity: 0.85;
 }
 
-/* Animated Underline */
+/* Animated underline */
 .hero-title {
   position: relative;
   display: inline-block;
@@ -86,19 +75,43 @@ img {
   width: 0;
   height: 3px;
   background: linear-gradient(to right, #e7ddff, #d3e8ff, #f5ecff);
+  transition: width 0.5s ease;
 }
 
-/* CARD STYLES */
+.hero-title.animate-underline::after {
+  width: 100%;
+}
+
+/* ---------------- Cards & Trip Reveal ---------------- */
 .card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   padding: 20px;
   margin: 20px auto;
   max-width: 800px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* COLLECTIONS */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+#trip-reveal img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(58,42,112,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#trip-reveal img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(58,42,112,0.35);
+}
+
+/* ---------------- Collections ---------------- */
 .collections {
   display: flex;
   flex-wrap: wrap;
@@ -110,21 +123,70 @@ img {
 .collection-card {
   background: #fff;
   border-radius: 16px;
-  padding: 10px;
+  padding: 15px;
   width: 250px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* FOOTER */
+.collection-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(58,42,112,0.2);
+}
+
+/* Image hover glow */
+.collection-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(58,42,112,0.25);
+}
+
+/* ---------------- Footer ---------------- */
 footer {
   text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #777;
-  border-top: 1px solid #eee;
+  padding: 30px 20px;
+  font-size: 0.95em;
+  color: #fff;
+  background: linear-gradient(to right, #3a2a70, #6c53b1);
+  box-shadow: 0 -4px 20px rgba(58,42,112,0.25);
+}
+
+footer .footer-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #f0e8ff;
+}
+
+footer .footer-tagline {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #e0d4ff;
+}
+
+footer .footer-copy {
+  font-size: 0.85rem;
+  color: #d3c1ff;
+}
+
+/* ---------------- Buttons ---------------- */
+a.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #d3e8ff, #e7ddff);
+  border-radius: 12px;
+  color: #3a2a70;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(58,42,112,0.15);
 }
 </style>
+
 </head>
 <body>
 
