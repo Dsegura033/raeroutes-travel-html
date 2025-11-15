@@ -8,43 +8,59 @@
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <styles>
-/* GLOBAL */
-body {
-    font-family: "Inter", sans-serif;
-    background: #faf8ff; /* soft very light pastel */
-    color: #333;
+/* ------------------------------
+   GLOBAL RESET + BODY
+------------------------------ */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* --------------------------
-   HEADER (Hero Section)
----------------------------*/
+body {
+    font-family: "Inter", sans-serif;
+    background: #faf8ff; /* soft pastel base */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ------------------------------
+   HEADER (HERO)
+------------------------------ */
 header {
     text-align: center;
-    padding: 60px 20px;
+    padding: 50px 20px;
     background: linear-gradient(135deg, #e7d9ff, #c8e3ff);
-    border-bottom: 3px solid rgba(180, 140, 255, 0.3);
+    border-radius: 20px;
+    max-width: 1100px;
+    margin: 20px auto;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+header img {
+    width: 180px;
+    max-width: 60%;
+    margin-bottom: 15px;
 }
 
 header h1 {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
     font-weight: 700;
+    color: #4b4b7f;
     margin-bottom: 10px;
 }
 
 header p {
-    font-size: 1.1rem;
-    margin-top: 0;
-    color: #4a3d66;
+    font-size: 1.2rem;
+    color: #6b6b8a;
 }
 
-/* Underline for section headers */
+/* Section titles underline */
 .section-title {
     text-align: center;
     font-size: 2rem;
-    margin-top: 50px;
-    margin-bottom: 10px;
+    margin: 50px 0 20px 0;
+    font-weight: 700;
     position: relative;
 }
 
@@ -58,138 +74,151 @@ header p {
     border-radius: 2px;
 }
 
-/* --------------------------
-   HOW IT WORKS SECTION
----------------------------*/
-.how-it-works {
-    background: rgba(240, 232, 255, 0.8);
+/* ------------------------------
+   HOW IT WORKS
+------------------------------ */
+#how-it-works {
+    background: #f0ebff;
     padding: 50px 20px;
     border-radius: 20px;
-    width: 85%;
+    max-width: 1100px;
     margin: 40px auto;
 }
 
-.how-it-works-steps {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+#how-it-works .card {
+    background: #ffffffcc;
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.how-step {
-    max-width: 250px;
-    text-align: center;
+#how-it-works .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(155,141,252,0.3);
 }
 
-.how-step-circle {
-    width: 90px;
-    height: 90px;
-    background: linear-gradient(135deg, #b889ff, #89b7ff);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.9rem;
-    font-weight: bold;
-    margin: 0 auto 10px;
+#how-it-works .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: #9b8dfc;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-/* --------------------------
+#how-it-works .btn:hover {
+    background: linear-gradient(135deg, #9b8dfc, #7f70f2);
+}
+
+/* ------------------------------
    COLLECTIONS GRID
----------------------------*/
-.collections-section {
-    background: #ffffff;
-    width: 90%;
-    margin: 40px auto;
-    padding: 40px;
-    border-radius: 18px;
-    box-shadow: 0 0 20px rgba(160, 140, 255, 0.15);
+------------------------------ */
+.collections {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .collections-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
 }
 
 .collection-card {
     background: white;
-    padding: 14px;
-    border-radius: 14px;
-    box-shadow: 0 2px 8px rgba(170, 120, 255, 0.15);
-    transition: 0.25s ease;
+    border-radius: 16px;
+    padding: 15px;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .collection-card:hover {
-    box-shadow: 0 12px 25px rgba(170, 120, 255, 0.35);
     transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(170, 120, 255, 0.45);
 }
 
 .collection-card img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 14px;
-}
-
-.collection-card-title {
-    margin-top: 10px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #4a3d66;
-}
-
-/* --------------------------
-   CONTACT SECTION
----------------------------*/
-.contact-section {
-    background: linear-gradient(120deg, #f4eaff, #e7f1ff);
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 60px;
-    border-radius: 18px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 0 20px rgba(130, 100, 255, 0.15);
-}
-
-.contact-title {
-    font-size: 1.6rem;
     margin-bottom: 10px;
-    color: #4a3d66;
 }
 
-.contact-info {
-    font-size: 1rem;
-    color: #5d4d74;
-    margin-bottom: 15px;
+.collection-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #4b4b7f;
 }
 
-.qr-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.collection-card p {
+    font-size: 0.95rem;
+    color: #6b6b8a;
 }
 
-.qr-container img {
-    width: 140px;
-    border-radius: 12px;
-}
-
-/* --------------------------
-   FOOTER
----------------------------*/
-footer {
+/* ------------------------------
+   TRIP REVEAL SAMPLE
+------------------------------ */
+#trip-reveal {
+    padding: 60px 20px;
     text-align: center;
-    padding: 25px 0;
-    background: #f1e9ff;
-    margin-top: 50px;
-    font-size: 0.9rem;
-    color: #4a3d66;
+    background: #e6f0ff;
+    border-radius: 20px;
+    max-width: 900px;
+    margin: 40px auto;
 }
+
+#trip-reveal .card img {
+    width: 30%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto 20px;
+    border-radius: 12px;
+    border: 2px solid #d1c4fc;
+    padding: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#trip-reveal .card img:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 8px 20px rgba(155,141,252,0.8),
+        0 0 20px rgba(255,200,0,0.6),
+        0 0 30px rgba(255,105,180,0.4);
+}
+
+#trip-reveal .card p {
+    margin-top: 15px;
+    font-style: italic;
+    color: #555;
+}
+
+/* ------------------------------
+   CONTACT SECTION
+------------------------------ */
+#contact {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #f3e9ff, #e8f2ff, #ffeefe);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(200, 170, 255, 0.25);
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+#contact p {
+    max-width: 600px;
+    margin: 0 auto
+
 </styles>
 </head>
 <body>
