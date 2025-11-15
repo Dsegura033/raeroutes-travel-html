@@ -97,6 +97,22 @@ img {
   height: 3px;
   background: linear-gradient(to right, #e7ddff, #d3e8ff, #f5ecff);
 }
+  a.btn, #contact a {
+  background: linear-gradient(to right, #d3e8ff, #e7ddff);
+  color: #3a2a70;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+a.btn:hover, #contact a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(108, 83, 177, 0.15);
+}
+
 
 /* CARD STYLES */
 .card {
@@ -117,13 +133,35 @@ img {
   margin: 20px 0;
 }
 
-.collection-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 10px;
-  width: 250px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+/* Cards hover */
+.card, .collection-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover, .collection-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(108, 83, 177, 0.2); /* soft purple glow */
+}
+  #contact {
+  background: linear-gradient(to bottom, #CCCCFF, #E6E6FA); /* soft purple gradient */
   text-align: center;
+  padding: 40px 20px;
+}
+
+#contact h2 {
+  color: #3a2a70;
+  text-shadow: 1px 1px 4px rgba(108, 83, 177, 0.2);
+}
+
+#contact strong {
+  color: #6c53b1;
+}
+
+
+/* Trip reveal hover */
+#trip-reveal img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(108, 83, 177, 0.35);
 }
 
 /* FOOTER */
@@ -134,6 +172,20 @@ footer {
   color: #777;
   border-top: 1px solid #eee;
 }
+  footer {
+  background: linear-gradient(to right, #3a2a70, #6c53b1);
+  color: #f0e8ff;
+  box-shadow: 0 -4px 20px rgba(58,42,112,0.25);
+}
+
+footer .footer-title {
+  color: #E4DCF5;
+}
+
+footer .footer-tagline, footer .footer-copy {
+  color: #D3C1FF;
+}
+
 </style>
 </head>
 <body>
