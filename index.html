@@ -9,199 +9,66 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
-  /* Base Styles */
   body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
     background: #f5f4f9;
     color: #333;
   }
 
   h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
     color: #4b4b7f;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  img {
-    max-width: 100%;
-    border-radius: 12px;
-  }
-
-  /* Header */
-  header {
-    background: linear-gradient(135deg, #c7d2fe, #e0c3fc);
-    padding: 50px 20px;
-    text-align: center;
-  }
-
-  header img {
-    max-width: 160px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-
-  header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-
-  header p {
-    font-size: 1.2rem;
-    color: #6b6b8a;
-  }
-
-  /* How It Works */
-  #how-it-works {
-    padding: 50px 20px;
-    text-align: center;
-  }
-
-  #how-it-works h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
   }
 
   #how-it-works .card {
     background: #fff;
-    border-radius: 16px;
-    padding: 25px;
-    margin: 20px auto;
-    max-width: 500px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-    text-align: left;
   }
 
   #how-it-works .card h3 {
-    margin-bottom: 10px;
+    color: #4b4b7f;
   }
 
   #how-it-works .card p {
     color: #6b6b8a;
-    font-size: 0.95rem;
-    line-height: 1.5;
   }
 
   #how-it-works .btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #b49dfc;
+    background: #9b8dfc;
     color: #fff;
-    border-radius: 8px;
-    font-weight: 600;
   }
 
   #how-it-works .btn:hover {
-    background: #9069f2;
-  }
-
-  /* Collections Section */
-  .collections {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
+    background: #7f70f2;
   }
 
   .collection-card {
     background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
 
-  .collection-card:hover {
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    transform: translateY(-5px);
-  }
-
-  .collection-card h3 {
-    margin: 15px 0 5px;
-  }
-
-  .collection-card p {
-    color: #6b6b8a;
-    font-size: 0.95rem;
-  }
-
-  /* Trip Reveal Sample */
-  #trip-reveal .card img {
-    max-width: 400px;
-    margin: 0 auto 20px;
-    display: block;
+  #trip-reveal .card {
+    background: #fff;
   }
 
   #trip-reveal .card p {
-    margin-top: 15px;
-    color: #9069f2;
-    font-style: italic;
-    text-align: center;
+    color: #9b8dfc;
   }
 
-  /* Contact Section */
   .contact-section {
-    padding: 50px 20px;
     background: #fff;
-    text-align: center;
-  }
-
-  .contact-section h2 {
-    margin-bottom: 20px;
-  }
-
-  .contact-section p {
-    max-width: 500px;
-    margin: 0 auto 30px;
-    color: #6b6b8a;
   }
 
   .contact-section a {
-    color: #9069f2;
-    font-weight: 600;
+    color: #9b8dfc;
   }
 
-  /* Footer */
   footer {
-    text-align: center;
-    padding: 20px;
     background: #c7d2fe;
     color: #4b4b7f;
   }
 
-  /* Lightbox */
-  .lightbox-overlay {
-    display: none;
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-
-  .lightbox-overlay img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 12px;
-  }
-
-  @media (max-width: 600px) {
-    header h1 { font-size: 2rem; }
-    header p { font-size: 1rem; }
-    #trip-reveal .card img { max-width: 90%; }
+  header {
+    background: linear-gradient(135deg, #c7d2fe, #e0c3fc);
   }
 </style>
+
 </head>
 <body>
 
