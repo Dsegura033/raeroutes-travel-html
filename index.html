@@ -344,19 +344,32 @@
 </footer>
 
 <!-- LIGHTBOX -->
-<div class="lightbox-overlay" id="lightbox">
-    <img src="" alt="Full Image" id="lightbox-img">
+<!-- LIGHTBOX OVERLAY -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+     background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
+    <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.5);">
 </div>
 
+<!-- LIGHTBOX SCRIPT -->
 <script>
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const cardImages = document.querySelectorAll('.collection-card img');
+  // Select all images with data-full attribute
+  const lightboxImages = document.querySelectorAll('img[data-full]');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
 
-cardImages.forEach(img => {
+  lightboxImages.forEach(img => {
     img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.dataset.full;
+      lightboxImg.src = img.dataset.full; // show full-size image
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  // Close Lightbox when clicking overlay
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+</script>
+
     });
 });
 
