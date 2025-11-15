@@ -140,47 +140,6 @@
     margin-bottom: 20px;
   }
 
-  .contact-section form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .contact-section input,
-  .contact-section textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    resize: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .contact-section input:focus,
-  .contact-section textarea:focus {
-    border-color: #9b8dfc;
-    box-shadow: 0 0 8px rgba(155,141,252,0.3);
-    outline: none;
-  }
-
-  .contact-section button {
-    padding: 12px;
-    background: #9b8dfc;
-    border: none;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-
-  .contact-section button:hover {
-    background: #7f70f2;
-    transform: translateY(-2px);
-  }
-
   .contact-section p {
     margin-top: 15px;
     color: #6b6b8a;
@@ -278,18 +237,18 @@
             <p>Memorable trips for the whole family.</p>
         </div>
         <div class="collection-card animate">
-            <img src="adventurecollection.png" alt="the adventure collection" data-full="adventurecollection.png">
+            <img src="adventurecollection.png" alt="Adventure Collection" data-full="adventurecollection.png">
             <h3>Adventure Collection</h3>
             <p>Made for the ones who chase fresh air, big views, and a little adrenaline.</p>
         </div>
         <div class="collection-card animate">
-            <img src="winterwonderland.png" alt="winter wonderland collection" data-full="winterwonderland.png">
+            <img src="winterwonderland.png" alt="Winter Wonderland Collection" data-full="winterwonderland.png">
             <h3>Winter Wonderland Collection</h3>
             <p>Made for the ones who love the holiday season magic, with destinations perfect for winter adventures.</p>
         </div>
     </div>
 </section>
-    
+
 <!-- TRIP REVEAL SAMPLE -->
 <section id="trip-reveal" class="animate">
     <h2>Trip Reveal Sample</h2>
@@ -338,32 +297,34 @@
 
 <!-- SCRIPTS -->
 <script>
-  // Scroll/fade-in animation
-  const animateElements = document.querySelectorAll('.animate, img');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('fade-in');
-      }
-    });
-  }, { threshold: 0.2 });
-
-  animateElements.forEach(el => observer.observe(el));
-
-  // Lightbox
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const cardImages = document.querySelectorAll('.collection-card img');
-
-  cardImages.forEach(img => {
-      img.addEventListener('click', () => {
-          lightbox.style.display = 'flex';
-          lightboxImg.src = img.dataset.full;
+  document.addEventListener('DOMContentLoaded', () => {
+    // Scroll/fade-in animation
+    const animateElements = document.querySelectorAll('.animate, img');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
       });
-  });
+    }, { threshold: 0.2 });
 
-  lightbox.addEventListener('click', () => {
+    animateElements.forEach(el => observer.observe(el));
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const cardImages = document.querySelectorAll('.collection-card img');
+
+    cardImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.dataset.full || img.src;
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
       lightbox.style.display = 'none';
+    });
   });
 </script>
 
