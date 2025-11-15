@@ -140,12 +140,21 @@
 
   /* Trip Reveal */
   #trip-reveal .card img {
-    max-width: 90%;
+    max-width: 60%;      /* smaller than before */
+    height: auto;
     display: block;
     margin: 0 auto 20px;
     border: 2px solid #d1c4fc;
     padding: 4px;
-  }
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#trip-reveal .card img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(155,141,252,0.5); /* glow effect */
+}
+
 
   #trip-reveal .card {
     background: #ffffffcc;
