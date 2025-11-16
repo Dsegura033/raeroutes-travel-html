@@ -354,7 +354,7 @@ a.btn:hover, #contact a:hover {
 /* ===== TRIP REVEAL SECTION ===== */
 #trip-reveal {
   position: relative;
-  padding: 60px 20px;
+  padding: 50px 20px;
   text-align: center;
   background: linear-gradient(to bottom right, #f3e8ff, #e3f0ff);
   border-radius: 20px;
@@ -370,65 +370,75 @@ a.btn:hover, #contact a:hover {
   transform: translateY(0);
 }
 
-/* Trip Reveal Card – dreamy glow */
+/* Trip Reveal Card */
 #trip-reveal .card {
   position: relative;
-  max-width: 420px;
-  margin: 30px auto;
-  padding: 15px 0;
+  max-width: 320px;   /* smaller card for desktop */
+  margin: 25px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.2); /* very light, almost transparent */
   border-radius: 16px;
-  background: transparent;  /* no white background */
+  backdrop-filter: blur(12px);      /* dreamy frosted effect */
+  
+  /* Glowy, magical shadows */
   box-shadow:
-    0 0 20px rgba(180, 150, 255, 0.25),
-    0 8px 30px rgba(108, 83, 177, 0.15),
-    0 0 60px rgba(215, 180, 255, 0.15);  /* dreamy glow layers */
+    0 0 20px rgba(180, 150, 255, 0.4),
+    0 8px 30px rgba(108, 83, 177, 0.25),
+    0 0 40px rgba(200, 170, 255, 0.3);
+  
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Hover effect for extra magic */
 #trip-reveal .card:hover {
   transform: translateY(-6px);
   box-shadow:
-    0 0 35px rgba(200, 160, 255, 0.35),
-    0 12px 40px rgba(108, 83, 177, 0.25),
-    0 0 80px rgba(230, 190, 255, 0.25);
+    0 0 35px rgba(180, 150, 255, 0.55),
+    0 12px 40px rgba(108, 83, 177, 0.35),
+    0 0 50px rgba(200, 170, 255, 0.4);
 }
 
-/* Card Image – glow effect */
+/* Card Image */
 #trip-reveal .card img {
-  width: 50%; 
+  width: 50%;                 /* smaller image */
+  max-width: 200px;           /* ensure it's not too big */
   border-radius: 12px;
   display: block;
   margin: 0 auto 15px auto;
-  filter: drop-shadow(0 0 15px rgba(200, 160, 255, 0.45))
-          drop-shadow(0 0 25px rgba(180, 140, 255, 0.35));
-  transition: transform 0.5s ease, filter 0.5s ease;
+
+  /* Dreamy glow */
+  box-shadow:
+    0 0 20px rgba(180, 150, 255, 0.45),
+    0 4px 15px rgba(108, 83, 177, 0.25),
+    0 0 30px rgba(200, 170, 255, 0.35);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 #trip-reveal .card:hover img {
   transform: scale(1.05);
-  filter: drop-shadow(0 0 25px rgba(210, 170, 255, 0.5))
-          drop-shadow(0 0 40px rgba(190, 150, 255, 0.4));
+  box-shadow:
+    0 0 35px rgba(180, 150, 255, 0.6),
+    0 6px 25px rgba(108, 83, 177, 0.35),
+    0 0 45px rgba(200, 170, 255, 0.45);
 }
 
-/* Card Paragraph – soft dreamy color */
+/* Card Paragraph */
 #trip-reveal .card p {
   margin: 0;
   font-size: 1rem;
-  color: #4b3a70;
-  text-shadow: 0 0 6px rgba(180, 140, 255, 0.25),
-               0 0 10px rgba(215, 180, 255, 0.15);
+  color: #3a2a70;
+  text-shadow: 0 0 4px rgba(180,150,255,0.25);
 }
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
   #trip-reveal .card {
-    max-width: 92%;
-    padding: 10px 0;
+    max-width: 90%;
+    padding: 18px;
   }
 
   #trip-reveal .card img {
-    width: 70%; 
+    width: 70%;  /* larger on mobile for visibility */
+    max-width: 180px;
     height: auto;
   }
   
