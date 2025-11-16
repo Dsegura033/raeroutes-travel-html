@@ -250,7 +250,20 @@ a.btn:hover, #contact a:hover {
   padding: 60px 20px;
   overflow: hidden;
   border-radius: 20px;
-  background: linear-gradient(to bottom, #e7ddff, #d3e8ff, #f5ecff); /* optional */
+  background: linear-gradient(to bottom, #e7ddff, #d3e8ff, #f5ecff);
+}
+
+/* Lottie Animation – FIXED */
+.collections-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45; /* let animation show softly */
 }
 
 /* Collections Grid */
@@ -269,8 +282,12 @@ a.btn:hover, #contact a:hover {
   margin: 15px;
   text-align: center;
   border-radius: 16px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  z-index: 2;
 }
 
 .collection-card img {
@@ -280,58 +297,10 @@ a.btn:hover, #contact a:hover {
 }
 
 .collection-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(108, 83, 177, 0.2); /* soft purple glow */
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(108, 83, 177, 0.25);
 }
-
-/* DARKER Magical Floating Background */
-.collections-animation {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 250%;       /* bigger */
-  height: 250%;      /* bigger */
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
-
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(100, 70, 180, 0.45), transparent 60%),
-    radial-gradient(circle at 80% 70%, rgba(70, 110, 200, 0.40), transparent 65%),
-    radial-gradient(circle at 50% 50%, rgba(180, 160, 255, 0.30), transparent 70%);
   
-  background-size: 300% 300%;
-  opacity: 0.65;       /* darker + more visible */
-  mix-blend-mode: overlay;
-
-  animation: floatMagic 18s infinite ease-in-out alternate;
-}
-
-/* Floating Animation Keyframes */
-@keyframes floatMagic {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-48%, -52%) scale(1.08); } /* slightly bigger float */
-  100% { transform: translate(-52%, -48%) scale(1); }
-}
-
-/* Keep text/cards above the animation */
-.collections-section h2,
-.collections-section .collections,
-.collections-section .collection-card {
-  position: relative;
-  z-index: 2;
-}
-
-/* Cards hover (keep consistency) */
-.card, .collection-card {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover, .collection-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(108, 83, 177, 0.2);
-}
-
  /* CONTACT SECTION */
 #contact h2 {
   color: #4B2E83; /* deep plum for strong contrast */
@@ -357,72 +326,49 @@ a.btn:hover, #contact a:hover {
 
 
 /* TRIP REVEAL SECTION */
-.reveal-section {
+#trip-reveal {
   position: relative;
-  padding: 70px 20px;
+  padding: 60px 20px;
   text-align: center;
   overflow: hidden;
+  background: linear-gradient(to bottom right, #f3e8ff, #e3f0ff);
   border-radius: 20px;
-  background: linear-gradient(to bottom, #e7ddff, #d3e8ff, #f5ecff); /* soft hero-matching gradient */
-  max-width: 600px;
-  margin: 30px auto;
 }
 
-/* Floating Lottie Animation */
+/* Lottie Animation – FIXED Sizing */
 .reveal-animation {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300%;       /* bigger and more immersive */
-  height: 300%;
+  width: 160%;
+  height: 160%;
   transform: translate(-50%, -50%);
-  opacity: 0.65;     /* darker and richer */
-  mix-blend-mode: overlay;
   pointer-events: none;
   z-index: 0;
-  animation: floatReveal 20s infinite ease-in-out alternate;
+  opacity: 0.35; /* soft + magical */
 }
 
-/* Floating animation keyframes */
-@keyframes floatReveal {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-48%, -52%) scale(1.12); } /* slightly bigger float */
-  100% { transform: translate(-52%, -48%) scale(1); }
-}
-
-/* Keep text and card above animation */
-.reveal-section h2,
-.reveal-section .card {
+/* Reveal Card */
+#trip-reveal .card {
   position: relative;
   z-index: 2;
-}
-
-/* Trip Reveal Card - No White Background */
-.reveal-section .card {
-  background: transparent;  /* remove white box */
-  border-radius: 16px;
+  max-width: 420px;
+  margin: 20px auto;
   padding: 20px;
-  box-shadow: none;         /* remove the default shadow */
-  transition: transform 0.3s; 
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;      /* centers the image and text */
-  position: relative;       /* keeps it above the animation */
-  z-index: 2;
+  background: rgba(255,255,255,0.9);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(108, 83, 177, 0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Trip Reveal Image */
-.reveal-section .card img {
-  max-width: 60%;           /* smaller so background shows more */
-  height: auto;
+#trip-reveal .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(108, 83, 177, 0.25);
+}
+
+#trip-reveal img {
+  width: 100%;
   border-radius: 12px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.reveal-section .card img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 40px rgba(108, 83, 177, 0.35); /* subtle glow on hover */
 }
 
 /* FOOTER */
