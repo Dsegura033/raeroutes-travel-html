@@ -19,80 +19,70 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
-  /* ===== HERO HEADER ===== */
+ /* ===== HERO HEADER ===== */
 .hero-header {
   position: relative;
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(to bottom right, #e7ddff, #d3e8ff);
-  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full screen */
+  padding: 0;
+  background: linear-gradient(to bottom right, #e7ddff, #d3e8ff); /* optional gradient */
   overflow: hidden;
+  border-radius: 0; /* full screen, no border rounding */
 }
 
 /* Logo */
 .hero-logo {
-  width: 180px;
-  max-width: 60%;
-  margin: 0 auto 20px;
+  width: auto;
+  max-width: 70%;       /* adjusts for desktop */
+  max-height: 80vh;     /* prevents overflow on tall screens */
   display: block;
   position: relative;
   z-index: 2;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  filter: drop-shadow(0 0 25px rgba(180, 150, 255, 0.5)); /* dreamy glow */
 }
 
-/* Optional hover effect for logo */
+/* Hover effect for logo */
 .hero-logo:hover {
   transform: scale(1.05);
+  filter: drop-shadow(0 0 40px rgba(220, 180, 255, 0.7)); /* stronger glow on hover */
 }
 
-/* Lottie Animation Background */
+/* Hide headline and subtitle */
+.hero-header h1,
+.hero-subtitle,
 .hero-animation {
+  display: none;
+}
+
+/* Optional: add subtle animated glow behind the logo */
+.hero-header::before {
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 140%;
-  height: 140%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(220,180,255,0.3) 0%, transparent 70%);
   transform: translate(-50%, -50%);
-  opacity: 0.85;
-  z-index: 0;
-  pointer-events: none;
-  mix-blend-mode: overlay; /* dreamy effect */
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: pulse 4s ease-in-out infinite;
+  z-index: 1;
 }
 
-/* Headline */
-.hero-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #3a2a70;
-  position: relative;
-  z-index: 2;
-  margin: 10px 0;
-}
-
-/* Subtitle */
-.hero-subtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
-  color: #4f4f4f;
-  opacity: 0.85;
-  position: relative;
-  z-index: 2;
-  margin: 5px 0 0 0;
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.7; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
 }
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
   .hero-logo {
-    width: 140px;
-  }
-
-  .hero-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
+    max-width: 90%;
+    max-height: 60vh;
   }
 }
 
