@@ -351,7 +351,7 @@ a.btn:hover, #contact a:hover {
 }
 
 
-/* TRIP REVEAL SECTION */
+/* ===== TRIP REVEAL SECTION ===== */
 #trip-reveal {
   position: relative;
   padding: 60px 20px;
@@ -361,27 +361,27 @@ a.btn:hover, #contact a:hover {
   border-radius: 20px;
 }
 
-/* Lottie Animation */
+/* Lottie Confetti Animation – behind the card */
 .reveal-animation {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 160%;
-  height: 160%;
+  width: 200%;
+  height: 200%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 0;
-  opacity: 0.32;
+  z-index: 0; /* behind the card */
+  opacity: 0.3; /* soft subtle effect */
 }
 
-/* Reveal Card */
+/* Trip Reveal Card */
 #trip-reveal .card {
   position: relative;
-  z-index: 2;
+  z-index: 1; /* above animation */
   max-width: 420px;
-  margin: 20px auto;
-  padding: 20px;
-  background: rgba(255,255,255,0.9);
+  margin: 30px auto;
+  padding: 25px;
+  background: rgba(255,255,255,0.95); /* mostly opaque so content is clear */
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(108, 83, 177, 0.15);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -392,10 +392,43 @@ a.btn:hover, #contact a:hover {
   box-shadow: 0 12px 30px rgba(108, 83, 177, 0.25);
 }
 
-#trip-reveal img {
+/* Card Image */
+#trip-reveal .card img {
   width: 100%;
   border-radius: 12px;
+  display: block;
+  margin: 0 auto 15px auto;
 }
+
+/* Card Paragraph */
+#trip-reveal .card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Fade-in for section */
+#trip-reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1.1s ease-out, transform 1.1s ease-out;
+}
+#trip-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #trip-reveal .card {
+    max-width: 92%;
+    padding: 18px;
+  }
+
+  #trip-reveal .card img {
+    width: 100%;
+    height: auto;
+  }
   
 /* FOOTER */
 footer {
@@ -502,7 +535,7 @@ footer .footer-tagline, footer .footer-copy {
 <section id="collections" class="collections-section">
     <!-- Lottie animation as background -->
     <lottie-player
-        src="twinklestars.json"
+        src="websiteanimation.json"
         class="collections-animation"
         background="transparent"
         speed="1"
@@ -548,7 +581,7 @@ footer .footer-tagline, footer .footer-copy {
 
 <section id="trip-reveal" class="reveal-section">
 
-    <!-- Magical Floating Background -->
+    <!-- Magical Floating Background behind card -->
     <lottie-player 
         src="ConfettiPurple.json"
         class="reveal-animation"
