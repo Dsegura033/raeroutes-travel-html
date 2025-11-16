@@ -417,7 +417,7 @@ a.btn:hover, #contact a:hover {
   display: block;
   margin: 0 auto 15px auto;
   position: relative;
-  z-index: 1; /* behind animation */
+  z-index: 2; /* image above animation */
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -426,7 +426,7 @@ a.btn:hover, #contact a:hover {
   box-shadow: 0 10px 30px rgba(190, 160, 255, 0.35);
 }
 
-/* ===== Lottie Animation ON TOP of image ===== */
+/* ===== Lottie Animation BEHIND the image ===== */
 #trip-reveal .card .reveal-animation {
   position: absolute;
   top: 0;
@@ -434,9 +434,9 @@ a.btn:hover, #contact a:hover {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 2;            /* above image but below text */
+  z-index: 1;            /* behind image and text */
   opacity: 0.35;
-  mix-blend-mode: screen; /* magical overlay effect */
+  mix-blend-mode: normal; /* clear behind effect */
 }
 
 /* ===== Card Text stays above animation ===== */
