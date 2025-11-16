@@ -242,8 +242,7 @@ a.btn:hover, #contact a:hover {
   margin: 20px auto;
   max-width: 800px;
 }
-
-/* COLLECTIONS SECTION */
+/* ===== COLLECTIONS SECTION ===== */
 .collections-section {
   position: relative;
   text-align: center;
@@ -253,12 +252,12 @@ a.btn:hover, #contact a:hover {
   background: linear-gradient(to bottom, #e7ddff, #d3e8ff, #f5ecff);
 }
 
-/* Lottie Animation – Enhanced + Proper Coverage */
+/* ===== Lottie Animation – Proper Coverage ===== */
 .collections-animation {
   position: absolute;
-  top: 40%;          /* moved up so twinkles spread across section */
+  top: 40%;          /* move up for better spread */
   left: 50%;
-  width: 320%;       /* covers entire background */
+  width: 320%;
   height: 320%;
   transform: translate(-50%, -40%);
   pointer-events: none;
@@ -266,31 +265,29 @@ a.btn:hover, #contact a:hover {
   opacity: 0.55;     /* slightly brighter */
   animation: driftTwinkle 28s ease-in-out infinite alternate;
 }
-@keyframes driftTwinkle {
-  0% {
-    transform: translate(-50%, -40%) scale(1);
-  }
-  50% {
-    transform: translate(-48%, -38%) scale(1.08); /* gentle drift */
-  }
-  100% {
-    transform: translate(-52%, -42%) scale(1);
-  }
 
-/* Collections Grid */
+@keyframes driftTwinkle {
+  0%   { transform: translate(-50%, -40%) scale(1); }
+  50%  { transform: translate(-48%, -38%) scale(1.08); }
+  100% { transform: translate(-52%, -42%) scale(1); }
+}
+
+/* ===== Collections Grid ===== */
 .collections {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start; /* prevent stretching */
   gap: 20px;
-  margin: 20px 0;
+  margin: 20px auto;
+  max-width: 1100px;       /* contain the grid */
 }
 
-/* Collection Cards */
+/* ===== Collection Cards ===== */
 .collection-card {
-  width: 220px;
+  flex: 0 0 220px;           /* fixed width */
+  width: 220px;              /* fallback */
   padding: 15px;
-  margin: 15px;
   text-align: center;
   border-radius: 16px;
   background: rgba(255,255,255,0.85);
@@ -299,32 +296,37 @@ a.btn:hover, #contact a:hover {
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
   z-index: 2;
+  margin: 15px;
 }
 
+/* Card Images */
 .collection-card img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;               /* fill card width */
+  height: 140px;             /* consistent thumbnail height */
+  object-fit: cover;         /* crop nicely */
   border-radius: 12px;
+  display: block;
+  margin: 0 auto;
 }
 
+/* Hover effect */
 .collection-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(108, 83, 177, 0.25);
 }
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .collection-card {
+    flex: 0 0 46%;            /* two cards per row */
+    width: 46%;
+    margin: 8px 6px;
+  }
+
+  .collection-card img {
+    height: 110px;
+  }
   
-  /* Fix collection card sizing */
-.collection-card {
-  max-width: 380px;
-  margin: 0 auto;
-}
-
-/* Ensure collection images stay proportional */
-.collection-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-}
-
  /* CONTACT SECTION */
 #contact h2 {
   color: #4B2E83; /* deep plum for strong contrast */
@@ -349,7 +351,7 @@ a.btn:hover, #contact a:hover {
 }
 
 
-/* TRIP REVEAL SECTION */
+/* ===== TRIP REVEAL SECTION ===== */
 #trip-reveal {
   position: relative;
   padding: 60px 20px;
@@ -362,6 +364,14 @@ a.btn:hover, #contact a:hover {
   opacity: 0;
   transform: translateY(25px);
   transition: opacity 1.1s ease-out, transform 1.1s ease-out;
+
+  /* center content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 450px;  /* constrain section width */
+  margin: 0 auto;
 }
 
 /* Fade-in when visible */
@@ -380,27 +390,28 @@ a.btn:hover, #contact a:hover {
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.32; /* slightly softer for magic effect */
+  opacity: 0.32; /* subtle magic */
 }
 
 /* Reveal Card */
 #trip-reveal .card {
   position: relative;
   z-index: 2;
-  max-width: 400px; /* slightly smaller for elegance */
+  width: 100%;
+  max-width: 400px;   /* card width */
   margin: 25px auto;
   padding: 22px;
   background: rgba(255,255,255,0.78);
   border-radius: 20px;
   backdrop-filter: blur(8px);
 
-  /* Magical glow base */
+  /* Magical glow */
   box-shadow:
     0 0 20px rgba(170, 140, 255, 0.18),
     0 8px 18px rgba(108, 83, 177, 0.12);
 
+  border: 1px solid rgba(200, 170, 255, 0.28);
   transition: transform 0.6s ease, box-shadow 0.6s ease, border 0.6s ease;
-  border: 1px solid rgba(200, 170, 255, 0.28); /* soft pastel border */
 }
 
 /* Hover Glow – Magical Aura */
@@ -412,41 +423,35 @@ a.btn:hover, #contact a:hover {
   border: 1px solid rgba(210, 180, 255, 0.5);
 }
 
-/* Image */
-#trip-reveal img {
-  width: 92%;            /* slightly smaller */
+/* Reveal Card Image */
+#trip-reveal .card img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
   border-radius: 14px;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* Image hover glow */
+/* Hover Image Glow */
 #trip-reveal .card:hover img {
   transform: scale(1.04);
   box-shadow: 0 10px 30px rgba(190, 160, 255, 0.35);
 }
-  /* Trip Reveal – keep card size consistent */
-#trip-reveal {
-  max-width: 420px;
-  margin: 0 auto;
-}
 
-/* Make sure image inside reveal stays controlled */
-#trip-reveal img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 22px;
-}
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #trip-reveal .card {
+    max-width: 92%;
+    padding: 18px;
+  }
 
-/* Keep animation subtle */
-#trip-reveal img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 40px rgba(108, 83, 177, 0.35);
-}
-
-
+  #trip-reveal .card img {
+    width: 100%;
+    height: auto;
+  }
+  
 /* FOOTER */
 footer {
   text-align: center;
