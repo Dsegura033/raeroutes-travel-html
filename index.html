@@ -206,19 +206,30 @@ a.btn:hover, #contact a:hover {
   margin-bottom: 25px;
 }
 
+/* Card */
 #how-it-works .card {
   background: #fff;
   border-radius: 16px;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 500px;
+  padding: 25px 20px;
+  margin: 25px auto;
+  max-width: 600px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
+/* Hover Animation */
 #how-it-works .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(108, 83, 177, 0.2);
+}
+
+/* Lottie Icons */
+.how-icon {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 15px;
+  display: block;
 }
 
 
@@ -375,26 +386,57 @@ footer .footer-tagline, footer .footer-copy {
     <p class="hero-subtitle">Give the Gift of Going ✈️</p>
 </header>
 
-<!-- HOW IT WORKS -->
 <section id="how-it-works">
     <h2>How It Works</h2>
 
+    <!-- Step 1 -->
     <div class="card">
+        <lottie-player 
+            src="forms.json"
+            class="how-icon"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay>
+        </lottie-player>
+
         <h3>🎁 1. The Gifter Fills Out the Gift Request</h3>
         <p>You decide the budget, trip style, and what to include. Fill out the holiday gift request form so RaeRoutes can prepare custom options.</p>
         <a class="btn" href="https://form.jotform.com/252610303961045" target="_blank">Fill Out Gift Form</a>
     </div>
 
+    <!-- Step 2 -->
     <div class="card">
+        <lottie-player 
+            src="Mapbrowsing.json"
+            class="how-icon"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay>
+        </lottie-player>
+
         <h3>✅ 2. You Approve the Trip Plan & Pay</h3>
         <p>Room options, package pricing, flights, and add-ons are broken down for you. Everything is booked under the receiver’s name using the gifter’s card.</p>
     </div>
 
+    <!-- Step 3 -->
     <div class="card">
+        <lottie-player 
+            src="thumbupparty.json"
+            class="how-icon"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay>
+        </lottie-player>
+
         <h3>✈️ 3. The Receiver Gets a Beautiful Trip Reveal</h3>
         <p>The receiver will see a customized trip reveal page with all details of their getaway: destination, hotel, dates, and add-ons included.</p>
     </div>
+
 </section>
+
 
 <!-- COLLECTIONS SECTION -->
 <section id="collections">
