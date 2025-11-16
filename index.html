@@ -360,49 +360,35 @@ a.btn:hover, #contact a:hover {
   background: linear-gradient(to bottom right, #f3e8ff, #e3f0ff);
   border-radius: 20px;
 
-  /* fade-in base */
+  /* Fade-in base */
   opacity: 0;
   transform: translateY(25px);
   transition: opacity 1.1s ease-out, transform 1.1s ease-out;
 
-  /* center content */
+  /* Center content */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 450px;  /* constrain section width */
+  max-width: 500px;
   margin: 0 auto;
 }
 
-/* Fade-in when visible */
 #trip-reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ===== Lottie Confetti OVER the card (magical overlay) ===== */
-.reveal-animation {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 160%;
-  height: 160%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 3;            /* above card and image */
-  opacity: 0.35;         /* soft magic effect */
-  mix-blend-mode: screen; /* blends nicely over the image */
-}
-
 /* ===== Reveal Card ===== */
 #trip-reveal .card {
   position: relative;
-  z-index: 2;               
+  overflow: hidden;       /* ensures animation stays inside card */
+  z-index: 1;             
   width: 100%;
   max-width: 400px;
   margin: 25px auto;
   padding: 22px;
-  background: rgba(255,255,255,0.6); /* slightly transparent for behind animation */
+  background: rgba(255, 255, 255, 0.6); /* slightly transparent for animation behind */
   border-radius: 20px;
   backdrop-filter: blur(6px);
 
@@ -410,12 +396,10 @@ a.btn:hover, #contact a:hover {
   box-shadow:
     0 0 20px rgba(170, 140, 255, 0.18),
     0 8px 18px rgba(108, 83, 177, 0.12);
-
   border: 1px solid rgba(200, 170, 255, 0.28);
   transition: transform 0.6s ease, box-shadow 0.6s ease, border 0.6s ease;
 }
 
-/* Hover Glow – Magical Aura */
 #trip-reveal .card:hover {
   transform: translateY(-8px);
   box-shadow:
@@ -431,14 +415,34 @@ a.btn:hover, #contact a:hover {
   height: auto;
   border-radius: 14px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 15px auto;
+  position: relative;
+  z-index: 1; /* behind animation */
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* Hover Image Glow */
 #trip-reveal .card:hover img {
-  transform: scale(1.04);
+  transform: scale(1.03);
   box-shadow: 0 10px 30px rgba(190, 160, 255, 0.35);
+}
+
+/* ===== Lottie Animation ON TOP of image ===== */
+#trip-reveal .card .reveal-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;            /* above image but below text */
+  opacity: 0.35;
+  mix-blend-mode: screen; /* magical overlay effect */
+}
+
+/* ===== Card Text stays above animation ===== */
+#trip-reveal .card p {
+  position: relative;
+  z-index: 3;
 }
 
 /* ===== Responsive adjustments ===== */
@@ -604,20 +608,23 @@ footer .footer-tagline, footer .footer-copy {
 
 <section id="trip-reveal" class="reveal-section">
 
-    <!-- Magical Floating Background -->
-    <lottie-player 
-        src="ConfettiPurple.json"
-        class="reveal-animation"
-        background="transparent"
-        speed="1"
-        loop
-        autoplay>
-    </lottie-player>
-
     <h2>Trip Reveal Sample</h2>
 
     <div class="card">
+        <!-- Reveal Image -->
         <img src="newtripreveal.png" alt="Trip Reveal Preview">
+
+        <!-- Lottie animation ON TOP of image -->
+        <lottie-player 
+            src="ConfettiPurple.json"
+            class="reveal-animation"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay>
+        </lottie-player>
+
+        <!-- Card Text -->
         <p>This is an example of the beautiful trip reveal your recipient will see once their holiday getaway is booked!</p>
     </div>
 </section>
