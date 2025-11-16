@@ -166,14 +166,15 @@ footer .footer-copy {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 140%;  /* bigger so it fills the background */
+  width: 140%;
   height: 140%;
   transform: translate(-50%, -50%);
-  opacity: 0.45;  /* soft pastel feel */
-  z-index: 0;     /* behind everything */
-  pointer-events: none; /* ignores clicks */
+  opacity: 0.85;   /* make it more visible */
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: overlay; /* makes it stand out */
 }
-
+  
   a.btn, #contact a {
   background: linear-gradient(to right, #d3e8ff, #e7ddff);
   color: #3a2a70;
