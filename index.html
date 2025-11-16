@@ -397,21 +397,24 @@ a.btn:hover, #contact a:hover {
   z-index: 2;
 }
 
-/* Trip Reveal Card */
+/* Trip Reveal Card - No White Background */
 .reveal-section .card {
-  background: #fff;
+  background: transparent;  /* remove white box */
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 8px 30px rgba(108, 83, 177, 0.25);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: none;         /* remove the default shadow */
+  transition: transform 0.3s; 
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center; /* keeps smaller image centered */
+  align-items: center;      /* centers the image and text */
+  position: relative;       /* keeps it above the animation */
+  z-index: 2;
 }
 
+/* Trip Reveal Image */
 .reveal-section .card img {
-  max-width: 60%;
+  max-width: 60%;           /* smaller so background shows more */
   height: auto;
   border-radius: 12px;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -419,7 +422,7 @@ a.btn:hover, #contact a:hover {
 
 .reveal-section .card img:hover {
   transform: scale(1.02);
-  box-shadow: 0 12px 40px rgba(108, 83, 177, 0.35);
+  box-shadow: 0 12px 40px rgba(108, 83, 177, 0.35); /* subtle glow on hover */
 }
 
 /* FOOTER */
