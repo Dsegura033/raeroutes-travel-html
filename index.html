@@ -312,6 +312,19 @@ a.btn:hover, #contact a:hover {
   box-shadow: 0 12px 25px rgba(108, 83, 177, 0.25);
 }
   
+  /* Fix collection card sizing */
+.collection-card {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* Ensure collection images stay proportional */
+.collection-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
  /* CONTACT SECTION */
 #contact h2 {
   color: #4B2E83; /* deep plum for strong contrast */
@@ -413,6 +426,26 @@ a.btn:hover, #contact a:hover {
   transform: scale(1.04);
   box-shadow: 0 10px 30px rgba(190, 160, 255, 0.35);
 }
+  /* Trip Reveal – keep card size consistent */
+#trip-reveal {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* Make sure image inside reveal stays controlled */
+#trip-reveal img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+}
+
+/* Keep animation subtle */
+#trip-reveal img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(108, 83, 177, 0.35);
+}
+
 
 /* FOOTER */
 footer {
