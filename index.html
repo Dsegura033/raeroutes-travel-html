@@ -380,7 +380,7 @@ a.btn:hover, #contact a:hover {
   transform: translateY(0);
 }
 
-/* ===== Background Lottie Confetti (behind card) ===== */
+/* ===== Lottie Confetti OVER the card (magical overlay) ===== */
 .reveal-animation {
   position: absolute;
   top: 50%;
@@ -389,8 +389,9 @@ a.btn:hover, #contact a:hover {
   height: 160%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 1;   /* behind card */
-  opacity: 0.45;
+  z-index: 3;            /* above card and image */
+  opacity: 0.35;         /* soft magic effect */
+  mix-blend-mode: screen; /* blends nicely over the image */
 }
 
 /* ===== Reveal Card ===== */
