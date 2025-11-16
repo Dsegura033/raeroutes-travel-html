@@ -19,6 +19,83 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 <style>
+  /* ===== HERO HEADER ===== */
+.hero-header {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom right, #e7ddff, #d3e8ff);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Logo */
+.hero-logo {
+  width: 180px;
+  max-width: 60%;
+  margin: 0 auto 20px;
+  display: block;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+/* Optional hover effect for logo */
+.hero-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Lottie Animation Background */
+.hero-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  transform: translate(-50%, -50%);
+  opacity: 0.85;
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: overlay; /* dreamy effect */
+}
+
+/* Headline */
+.hero-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #3a2a70;
+  position: relative;
+  z-index: 2;
+  margin: 10px 0;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: #4f4f4f;
+  opacity: 0.85;
+  position: relative;
+  z-index: 2;
+  margin: 5px 0 0 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .hero-logo {
+    width: 140px;
+  }
+
+  .hero-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
 /* Base Styles */
 body {
   font-family: 'Inter', sans-serif;
@@ -493,22 +570,28 @@ footer .footer-tagline, footer .footer-copy {
 </head>
 <body>
   
-<!-- HEADER -->
-<header class="hero-header">
-    <img src="IMG_7560.jpg" alt="RaeRoutes Logo" class="hero-logo">
+<!-- HERO HEADER – Logo Focused -->
+<header class="hero-header" style="position: relative; text-align: center; padding: 60px 20px; background: linear-gradient(to bottom right, #e7ddff, #d3e8ff); border-radius: 20px; overflow: hidden;">
 
+    <!-- Logo centered -->
+    <img src="IMG_7560.jpg" alt="RaeRoutes Logo" class="hero-logo" style="width: 180px; max-width: 60%; margin: 0 auto 20px; display: block; z-index: 2; position: relative;">
+
+    <!-- Lottie Background Animation -->
     <lottie-player 
         src="websiteanimation.json"
         background="transparent"
         speed="1"
         loop
         autoplay
-        class="hero-animation">
+        style="position: absolute; top: 50%; left: 50%; width: 140%; height: 140%; transform: translate(-50%, -50%); opacity: 0.85; z-index: 0; pointer-events: none; mix-blend-mode: overlay;">
     </lottie-player>
 
-    <h1>Your Next Journey Awaits</h1>
-    <p class="hero-subtitle">Give the Gift of Going ✈️</p>
+    <!-- Headline & Subtitle -->
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: #3a2a70; position: relative; z-index: 2; margin: 10px 0;">Your Next Journey Awaits</h1>
+    <p style="font-family: 'Inter', sans-serif; font-size: 1.2rem; color: #4f4f4f; opacity: 0.85; position: relative; z-index: 2;">Give the Gift of Going ✈️</p>
+
 </header>
+
 
 <section id="how-it-works">
     <h2>How It Works</h2>
