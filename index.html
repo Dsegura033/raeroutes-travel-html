@@ -273,7 +273,38 @@ a.btn:hover, #contact a:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(108, 83, 177, 0.2); /* soft purple glow */
 }
+/* COLLECTIONS MAGIC BACKGROUND */
+.collections-section {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  overflow: hidden;
+  border-radius: 20px;
+}
 
+.collections-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  
+  /* dreamy soft vibe like your hero */
+  opacity: 0.55;  
+  mix-blend-mode: overlay;
+  
+  pointer-events: none; /* so it doesn’t block clicks */
+  z-index: 0;
+}
+
+/* Make sure all content stays above the animation */
+.collections-section h2,
+.collections-section .collections,
+.collections-section .collection-card {
+  position: relative;
+  z-index: 2;
+}
 
 /* Cards hover */
 .card, .collection-card {
@@ -408,7 +439,7 @@ footer .footer-tagline, footer .footer-copy {
     <!-- Step 2 -->
     <div class="card">
         <lottie-player 
-            src="Mapbrowsing.json"
+            src="thumbupparty.json"
             class="how-icon"
             background="transparent"
             speed="1"
@@ -423,7 +454,7 @@ footer .footer-tagline, footer .footer-copy {
     <!-- Step 3 -->
     <div class="card">
         <lottie-player 
-            src="thumbupparty.json"
+            src="GiftBoxWhite.json"
             class="how-icon"
             background="transparent"
             speed="1"
@@ -439,8 +470,20 @@ footer .footer-tagline, footer .footer-copy {
 
 
 <!-- COLLECTIONS SECTION -->
-<section id="collections">
+<section id="collections" class="collections-section">
+
+    <!-- Magical Background Animation -->
+    <lottie-player 
+        src="websiteanimation.json"  
+        class="collections-animation"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay>
+    </lottie-player>
+
     <h2>RaeRoutes Travel Collections</h2>
+
     <div class="collections">
         <div class="collection-card">
             <img src="citycollection.png" alt="City Collection" data-full="citycollection.png">
