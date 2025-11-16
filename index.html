@@ -395,6 +395,44 @@ a.btn:hover, #contact a:hover {
   transform: scale(1.02);
   box-shadow: 0 12px 40px rgba(108, 83, 177, 0.35);
 }
+  /* TRIP REVEAL SECTION */
+.reveal-section {
+  position: relative;
+  padding: 70px 20px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #e7ddff, #d3e8ff, #f5ecff);
+}
+
+/* Floating Lottie Animation */
+.reveal-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;        /* adjust darker or lighter */
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatReveal 20s infinite ease-in-out alternate;
+}
+
+/* Smooth floating animation */
+@keyframes floatReveal {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-48%, -52%) scale(1.05); }
+  100% { transform: translate(-52%, -48%) scale(1); }
+}
+
+/* Keep text and card above the animation */
+.reveal-section h2,
+.reveal-section .card {
+  position: relative;
+  z-index: 2;
+}
 
 /* FOOTER */
 footer {
@@ -553,13 +591,26 @@ footer .footer-tagline, footer .footer-copy {
 </section>
 
 <!-- TRIP REVEAL SAMPLE -->
-<section id="trip-reveal">
+<section id="trip-reveal" class="reveal-section">
+
+    <!-- Magical Floating Background -->
+    <lottie-player 
+        src="ConfettiPurple.json"
+        class="reveal-animation"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay>
+    </lottie-player>
+
     <h2>Trip Reveal Sample</h2>
+
     <div class="card">
         <img src="newtripreveal.png" alt="Trip Reveal Preview">
         <p>This is an example of the beautiful trip reveal your recipient will see once their holiday getaway is booked!</p>
     </div>
 </section>
+
 
 <!-- CONTACT -->
 <!-- Sections above, like collections and trip reveal -->
