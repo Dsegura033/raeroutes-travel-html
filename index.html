@@ -380,7 +380,7 @@ a.btn:hover, #contact a:hover {
   transform: translateY(0);
 }
 
-/* Background Lottie Confetti */
+/* ===== Background Lottie Confetti (behind card) ===== */
 .reveal-animation {
   position: absolute;
   top: 50%;
@@ -389,21 +389,21 @@ a.btn:hover, #contact a:hover {
   height: 160%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 0;
-  opacity: 0.32; /* subtle magic */
+  z-index: 1;   /* behind card */
+  opacity: 0.45;
 }
 
-/* Reveal Card */
+/* ===== Reveal Card ===== */
 #trip-reveal .card {
   position: relative;
-  z-index: 2;
+  z-index: 2;               
   width: 100%;
-  max-width: 400px;   /* card width */
+  max-width: 400px;
   margin: 25px auto;
   padding: 22px;
-  background: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.6); /* slightly transparent for behind animation */
   border-radius: 20px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
 
   /* Magical glow */
   box-shadow:
@@ -423,7 +423,7 @@ a.btn:hover, #contact a:hover {
   border: 1px solid rgba(210, 180, 255, 0.5);
 }
 
-/* Reveal Card Image */
+/* ===== Reveal Card Image ===== */
 #trip-reveal .card img {
   width: 100%;
   max-width: 380px;
@@ -440,7 +440,7 @@ a.btn:hover, #contact a:hover {
   box-shadow: 0 10px 30px rgba(190, 160, 255, 0.35);
 }
 
-/* Responsive adjustments */
+/* ===== Responsive adjustments ===== */
 @media (max-width: 600px) {
   #trip-reveal .card {
     max-width: 92%;
