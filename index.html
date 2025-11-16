@@ -439,19 +439,26 @@ a.btn:hover, #contact a:hover {
   line-height: 1.5;
 }
 
-/* ===== Responsive adjustments ===== */
+/* Responsive adjustments for mobile */
 @media (max-width: 600px) {
+  #trip-reveal {
+    padding: 40px 15px;       /* less padding on small screens */
+  }
+
   #trip-reveal > .card {
-    max-width: 90%;
-    padding: 18px;
+    max-width: 95%;            /* almost full width */
+    padding: 15px;             /* smaller padding */
   }
 
   #trip-reveal > .card img {
-    width: 60%;
-    max-width: 80px;
+    width: 70%;                /* bigger relative to smaller screen */
+    max-width: 180px;          /* constrain max width */
+    margin-bottom: 12px;
   }
-}
 
+  #trip-reveal > .card p {
+    font-size: 0.95rem;        /* slightly smaller text for mobile */
+  }
   
 /* FOOTER */
 footer {
