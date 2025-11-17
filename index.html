@@ -559,39 +559,51 @@ a.btn:hover, #contact a:hover {
     box-shadow: 0 6px 18px rgba(58,42,112,0.25);
 }
 
-  
-/* FOOTER */
+/* ===== CLEAN + MATCHED FOOTER ===== */
 footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #777;
-  border-top: 1px solid #eee;
-}
-  /* Footer - pastel match */
-footer {
-  background: linear-gradient(to right, #E6E6FA, #D3E8FF);
+  background: linear-gradient(to right, #e7ddff, #d3e8ff); /* matches your theme */
   color: #3a2a70;
-  padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 -4px 20px rgba(108, 83, 177, 0.1);
-  border-radius: 12px 12px 0 0;
-}
-footer .footer-title {
-  color: #6c53b1;
-}
-footer .footer-tagline, footer .footer-copy {
-  color: #4f4f4f;
-}
-  footer ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  padding: 35px 20px;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 20px rgba(108, 83, 177, 0.12);
+  margin-top: 60px;
 }
 
-</style>
-</head>
-<body>
+/* Footer Title */
+footer .footer-title {
+  color: #6c53b1;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+/* Tagline + Copyright */
+footer .footer-tagline,
+footer .footer-copy {
+  color: #4f4f4f;
+  font-size: 0.9em;
+}
+
+/* Footer Links List */
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+footer ul li {
+  margin: 5px 0;
+}
+
+/* Divider line above footer */
+.footer-divider {
+  width: 80%;
+  height: 1px;
+  margin: 30px auto 10px;
+  background: rgba(58, 42, 112, 0.2);
+  border-radius: 2px;
+}
+
   
 <!-- HERO HEADER – Logo Focused -->
 <header class="hero-header" style="position: relative; text-align: center; padding: 60px 20px; background: linear-gradient(to bottom right, #e7ddff, #d3e8ff); border-radius: 20px; overflow: hidden;">
