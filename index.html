@@ -427,15 +427,14 @@ a.btn:hover, #contact a:hover {
   background-color: #6B52E8; /* slightly darker shade for hover */
 }
 
-/* =======================
-   TRIP REVEAL SECTION
-   ======================= */
+/* ===== TRIP REVEAL SECTION ===== */
 #trip-reveal {
   position: relative;
   padding: 60px 20px;
   text-align: center;
   background: linear-gradient(to bottom right, #f3e8ff, #e3f0ff);
   border-radius: 20px;
+  overflow: hidden;
 
   /* Scroll fade-in */
   opacity: 0;
@@ -448,15 +447,37 @@ a.btn:hover, #contact a:hover {
   transform: translateY(0);
 }
 
-/* =======================
-   CARD
-   ======================= */
-#trip-reveal .card {
+/* ===== Floating Sparkle Background (same as Hero/Contact style) ===== */
+#trip-reveal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 60%),
+    radial-gradient(circle, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 60%);
+  animation: floatGlow 12s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+@keyframes floatGlow {
+  0%   { transform: translate(-10px, -10px) scale(1); }
+  50%  { transform: translate(10px, 15px) scale(1.05); }
+  100% { transform: translate(-10px, -10px) scale(1); }
+}
+
+/* ===== Trip Reveal Card ===== */
+#trip-reveal > .card {
   position: relative;
+  z-index: 2; /* ensures card sits above sparkles */
   max-width: 300px;
   margin: 30px auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.18);
   border-radius: 20px;
   box-shadow:
     0 0 25px rgba(180, 150, 255, 0.35),
@@ -466,52 +487,32 @@ a.btn:hover, #contact a:hover {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-#trip-reveal .card:hover {
+/* Hover Glow Effect */
+#trip-reveal > .card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow:
     0 0 50px rgba(220, 180, 255, 0.5),
     0 0 90px rgba(220, 180, 255, 0.25);
 }
 
-/* Shimmer Glow Overlay */
-#trip-reveal .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
-  animation: shimmer 6s linear infinite;
-  pointer-events: none;
-  border-radius: inherit;
-}
-
-@keyframes shimmer {
-  0%   { transform: translate(-20%, -20%) scale(1); }
-  50%  { transform: translate(0%, 0%) scale(1.1); }
-  100% { transform: translate(20%, 20%) scale(1); }
-}
-
-/* =======================
-   IMAGE
-   ======================= */
-#trip-reveal .card img {
+/* ===== Card Image ===== */
+#trip-reveal > .card img {
   width: 45%;
-  max-width: 120px;
+  max-width: 80px;
   border-radius: 16px;
   display: block;
-  margin: 0 auto 15px;
+  margin: 0 auto 15px auto;
   filter: drop-shadow(0 0 15px rgba(200, 150, 255, 0.5));
   transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-#trip-reveal .card:hover img {
-  transform: scale(1.07);
+#trip-reveal > .card:hover img {
+  transform: scale(1.05);
   filter: drop-shadow(0 0 25px rgba(220, 180, 255, 0.7));
 }
 
-/* =======================
-   PARAGRAPH
-   ======================= */
-#trip-reveal .card p {
+/* ===== Card Paragraph ===== */
+#trip-reveal > .card p {
   margin: 0;
   font-size: 1rem;
   color: #3a2a70;
@@ -519,26 +520,24 @@ a.btn:hover, #contact a:hover {
   line-height: 1.5;
 }
 
-/* =======================
-   MOBILE RESPONSIVE
-   ======================= */
+/* ===== Responsive (Mobile) ===== */
 @media (max-width: 600px) {
   #trip-reveal {
     padding: 40px 15px;
   }
 
-  #trip-reveal .card {
+  #trip-reveal > .card {
     max-width: 95%;
     padding: 15px;
   }
 
-  #trip-reveal .card img {
+  #trip-reveal > .card img {
     width: 70%;
     max-width: 180px;
     margin-bottom: 12px;
   }
 
-  #trip-reveal .card p {
+  #trip-reveal > .card p {
     font-size: 0.95rem;
   }
 }
