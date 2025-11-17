@@ -587,8 +587,11 @@ footer .footer-tagline, footer .footer-copy {
     </lottie-player>
 
     <!-- Headline & Subtitle -->
-    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: #3a2a70; position: relative; z-index: 2; margin: 10px 0;">Your Next Journey Awaits</h1>
-    <p style="font-family: 'Inter', sans-serif; font-size: 1.2rem; color: #4f4f4f; opacity: 0.85; position: relative; z-index: 2;">Give the Gift of Going ✈️</p>
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: #3a2a70; position: relative; z-index: 2; margin: 10px 0;">RaeRoutes: The Gift of Going</h1>
+   <p id="rotating-text" 
+   style="font-family: 'Inter', sans-serif; font-size: 1.2rem; color: #4f4f4f; opacity: 0.9; position: relative; z-index: 2; height: 24px;">
+   Perfect for couples
+</p>
 
 </header>
 
@@ -791,6 +794,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- LOTTIE PLAYER -->
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- ROTATING TEXT SCRIPT -->
+<script>
+    const lines = [
+        "Perfect for couples",
+        "Perfect for families",
+        "Perfect for best friends",
+        "Perfect for minimalist gifters",
+        "Perfect for experience lovers",
+        "Perfect for last-minute gifting",
+        "Perfect for parents & kids",
+        "Perfect for long-distance relationships",
+        "Perfect for holiday surprises"
+    ];
+
+    let index = 0;
+    const rotatingText = document.getElementById("rotating-text");
+
+    function rotateText() {
+        index = (index + 1) % lines.length;
+        rotatingText.style.opacity = 0;
+        setTimeout(() => {
+            rotatingText.textContent = lines[index];
+            rotatingText.style.opacity = 1;
+        }, 400);
+    }
+
+    setInterval(rotateText, 2500);
+</script>
+
 
 </body>
 </html>
