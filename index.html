@@ -352,6 +352,16 @@ a.btn:hover, #contact a:hover {
   position: relative;
   z-index: 2;
   margin: 15px;
+  
+  .collection-card p {
+  font-size: 0.9rem;
+  line-height: 1.3;
+  max-height: 2.6em; /* ~2 lines of text */
+  overflow: hidden;  /* hides any extra text */
+  text-overflow: ellipsis;
+  margin-top: 8px;   /* spacing under h3 */
+}
+
 
   /* new addition */
   display: flex;
@@ -711,10 +721,10 @@ footer ul li {
             <h3>Adventure Collection</h3>
             <p>Made for the ones who chase fresh air, big views, and a little adrenaline.</p>
         </div>
-       <div class="collection-card">
+<div class="collection-card">
     <img src="winterwonderland.png" alt="Winter Wonderland Collection" data-full="winterwonderland.png">
     <h3>Winter Wonderland Collection</h3>
-    <p>Made to experience the magic of the holiday season with winter getaways and snowy adventures.</p>
+    <p>Perfect winter holiday destinations.</p>
 </div>
 
     </div>
